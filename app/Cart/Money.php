@@ -18,6 +18,12 @@ class Money
     {
         $this->money = new BaseMoney($value, new Currency('EUR'));
     }
+
+    public function amount()
+    {
+        return $this->money->getAmount();
+    }
+
     public function formatted()
     {
         $formatter = new IntlMoneyFormatter(
