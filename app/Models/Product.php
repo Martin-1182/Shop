@@ -1,18 +1,18 @@
 <?php
 
+
 namespace App\Models;
 
-
 use App\Models\Category;
+use App\Models\Traits\HasPrice;
 use App\Models\ProductVariation;
 use App\Models\Traits\CanByScoped;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory, CanByScoped;
+    use HasFactory, CanByScoped, HasPrice;
 
     public function getRouteKeyName()
     {
