@@ -31,6 +31,7 @@ class ProductVariation extends Model
 
     public function inStock()
     {
+        /* return (bool) $this->stock->first()->pivot->in_stock; */
         return $this->stockCount() > 0;
     }
 
