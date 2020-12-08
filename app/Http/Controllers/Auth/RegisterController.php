@@ -11,7 +11,7 @@ use App\Http\Resources\PrivateUserResource;
 class RegisterController extends Controller
 {
 
-    public function action (RegisterRequest $request)
+    public function action(RegisterRequest $request)
     {
         $user = User::create($request->only('email', 'name', 'password'));
 
