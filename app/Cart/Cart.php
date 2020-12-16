@@ -17,12 +17,16 @@ class Cart
 
     public function add($products)
     {
-
-
-
         $this->user->cart()->syncWithoutDetaching(
             $this->getStorePayload($products)
         );
+    }
+
+    public function update($productId, $quantity)
+    {
+        $this->user->cart()->updateExistingPivot($productId, [
+            'quantity' => $quantity
+        ]);
     }
 
     protected function getStorePayload($products)
