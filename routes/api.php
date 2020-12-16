@@ -7,8 +7,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\MeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Products\ProductController;
 use App\Http\Controllers\Categories\CategoryController;
+use Illuminate\Routing\RouteGroup;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,6 +32,8 @@ Route::group(['prefix' => 'auth'], function () {
         Route::post('login', [LoginController::class, 'action']);
         Route::get('me', [MeController::class, 'action']);
 });
+
+Route::resource('cart', CartController::class);
 
 
 
